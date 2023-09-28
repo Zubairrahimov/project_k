@@ -10,8 +10,8 @@ class AuthorModel(models.Model):
 
 
         
-    # def __str__(self) -> str:
-    #     return self.name
+    def __str__(self) -> str:
+        return self.name
     
 
     class Meta:
@@ -23,8 +23,8 @@ class BookModel(models.Model):
     author = models.ForeignKey(AuthorModel, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
 
-    # def __str__(self) -> str:
-    #     return self.title
+    def __str__(self) -> str:
+        return self.title
     
     class Meta:
         db_table = 'Book'
