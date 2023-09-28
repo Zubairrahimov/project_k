@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class AuthorModel(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=101)
     dateofbirth = models.DateField()
     status = models.BooleanField(default=False)
     description = models.TextField()
@@ -13,6 +13,7 @@ class AuthorModel(models.Model):
     def __str__(self) -> str:
         return self.name
     
+
     class Meta:
         db_table = "Author"
 
