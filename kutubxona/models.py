@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 class AuthorModel(models.Model):
     name = models.CharField(max_length=100)
-    dateofbirth = models.DateField()
+    date_of_birth = models.DateField()
     status = models.BooleanField(default=False)
     description = models.TextField()
-    date_of_birth = models.CharField(max_length=1000)
+    date_of_death = models.DateField()
 
 
         

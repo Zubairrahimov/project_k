@@ -12,6 +12,5 @@ urlpatterns = [
     path('update_status/<int:pk>/',UpdateBookView.as_view()),
     path('Bdelete/<int:pk>/',DeleteBookView.as_view()),
     path('AutherBook/<int:pk>',AuthorBooksAPIView.as_view()),
-    
 
 ]
