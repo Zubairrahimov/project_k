@@ -58,23 +58,15 @@ class DeleteBookView(generics.DestroyAPIView):
     serializer_class = BookSerializer
     permission_classes = (IsAuthenticated, UserPermission)
 
+class AuthorBooksAPIView(APIView):
+    def get(self, request, pk, **kwargs):
+        
+        book = get_object_or_404(AuthorModel, id = pk)
+        books = BookModel.objects.filter(author=book.id)
+        serializer = BookSerializer(books,many=True)
+        
+        return Response(serializer.data)
 
-class AuthorBooksView(generics.ListAPIView):
-    serializer_class = BookSerializer
-    permission_classes = (IsAuthenticated,)
 
-    def get_queryset(self):
-        pk = self.kwargs['Auther_id'] 
-        return BookModel.objects.filter(pk=pk)
-    
-class BookAuthorView(generics.RetrieveAPIView):
-    queryset = AuthorModel.objects.all()
-    serializer_class = AutherSerializer
-    permission_classes = (IsAuthenticated,)
-
-    def get_object(self):
-        pk = self.kwargs['book_id']  
-        book = BookModel.objects.get(pk=pk)
-        return book.author
 
 
