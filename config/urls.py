@@ -26,3 +26,9 @@ urlpatterns = [
     path('api/users/', include('account.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]
+
+from django.conf.urls.i18n import i18n_patterns
+
+urlpatterns += i18n_patterns(
+    path('api/book/', include('kutubxona.urls'))
+)
