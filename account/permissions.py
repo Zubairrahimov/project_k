@@ -5,4 +5,4 @@ class IsAdminUserOrReadOnly(permissions.BasePermission):
 
         if request.method in permissions.SAFE_METHODS:
             return True
-        return request.user.is_authenticated and request.user.roles == 3 
+        return request.user.is_authenticated and request.user.roles == 3 or request.user.roles == 2

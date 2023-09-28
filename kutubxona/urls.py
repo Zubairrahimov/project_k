@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (CreatePollsAPiView,DeleteUserView,UpdateStatusPollsView,ListPollsApiView,
-                    CreateBookView,AllBookView,UpdateBookView,DeleteBookView,BookAuthorView,AuthorBooksView)
+                    CreateBookView,AllBookView,UpdateBookView,DeleteBookView,AuthorBooksAPIView,)
 
 urlpatterns = [
     path('Acreate/', CreatePollsAPiView.as_view()),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('Blist/',AllBookView.as_view()),
     path('update_status/<int:pk>/',UpdateBookView.as_view()),
     path('Bdelete/<int:pk>/',DeleteBookView.as_view()),
-    path('AutherBook/<int:pk>',AuthorBooksView.as_view()),
-    path('BookAuther/<int:pk>',BookAuthorView.as_view())
+    path('AutherBook/<int:pk>',AuthorBooksAPIView.as_view()),
+    
 
 ]
