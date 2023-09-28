@@ -10,7 +10,7 @@ class AuthorModel(models.Model):
 
 
         
-    def str(self) -> str:
+    def __str__(self) -> str:
         return self.name
     
     class Meta:
